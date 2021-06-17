@@ -4,7 +4,6 @@ const fs = require('fs').promises
 const constants = {
   contracts: {
     mainnet: {
-      masterChef: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
       wbnb: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
       nep: '0xcE3805A443eBb27B2A4058eC9d94dC4f9C000633',
       cake: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
