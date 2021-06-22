@@ -35,9 +35,9 @@ const getDatas = () => {
 const values = getDatas()
 
 const payload = {
-  targets: values[0],
-  values: Array(4).fill(0),
-  datas: JSON.stringify(values[1]).replace(/"/g, ''),
+  targets: values[0].join(',').replace(/"/g, ''),
+  values: Array(4).fill(0).join(','),
+  datas: JSON.stringify(values[1]).replace(/"/g, '').replace('[', '').replace(']', ''),
   predecessor: '0x',
   salt: '0xf8b8d17fe4817e9a02a8d090fc699dbde9a49fec227dd3e0cc357a33accf0fae',
   delay: day
