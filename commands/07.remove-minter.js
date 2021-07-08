@@ -11,12 +11,11 @@ const mintRemaining = () => {
 
 const removeMinter = () => {
   const contract = new ethers.utils.Interface(['function removeMinter(uint8 key, address account)'])
-  const keys = [1, 2, 3]
   const datas = []
 
-  for (let i = 0; i < keys.length; i++) {
-    datas.push(contract.encodeFunctionData('removeMinter', [i, NEP_DEPLOYER]))
-  }
+  datas.push(contract.encodeFunctionData('removeMinter', [1, NEP_DEPLOYER]))
+  datas.push(contract.encodeFunctionData('removeMinter', [2, NEP_DEPLOYER]))
+  datas.push(contract.encodeFunctionData('removeMinter', [3, NEP_DEPLOYER]))
 
   return datas
 }
@@ -28,7 +27,7 @@ const payload = {
   values: Array(4).fill(0).join(','),
   datas: JSON.stringify(values).replace(/"/g, '').replace('[', '').replace(']', ''),
   predecessor: '0x',
-  salt: '0xd2c36e3cba2238db17f57a5b0d78f7a6a81b98b793a9414f0b2a2f11259f4105',
+  salt: '0xe661f91023f64a6a0fed70729511b9db66318dba384f8d74576b2535f403d090',
   delay: day
 }
 
